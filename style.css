@@ -48,7 +48,11 @@
 	margin: 0 auto;
 	text-align: center;
 }
-
+.section-works h1 {
+	color: #fff;
+	position: relative;
+	z-index: 5;
+}
 .section-content {
 	display: flex;
 	flex-direction: column;
