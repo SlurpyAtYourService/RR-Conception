@@ -35,53 +35,62 @@
 			font-weight: 400;
 		}
 
-		/* FIX LAYOUT */
+		/* ===================== */
+		/* ABOUT LAYOUT */
+		/* ===================== */
+
 		.about-content {
 			display: flex;
 			align-items: center;
 		}
 
 		.left {
-			position: relative;
-			top: -10px;
-			padding-right: 40px;
 			width: 50%;
+			padding-right: 60px;
+			transform: translateY(-10px);
+		}
+
+		.left h1 {
+			font-size: 54px;
+			margin-bottom: 20px;
+		}
+
+		.left p {
+			font-size: 18px;
+			line-height: 1.6;
 		}
 
 		.right {
-			position: relative;
-			min-height: 540px;
 			width: 50%;
+			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			min-height: 650px;
 		}
 
-		/* FIX IMAGE 1 (no stretch) */
 		.my-photo {
-			width: 380px;
+			width: 460px;
 			height: auto;
-			object-fit: contain;
-			z-index: 2;
 			position: relative;
+			z-index: 2;
 		}
 
-		/* IMAGE 22 STARTS OFF SCREEN RIGHT */
 		.img22 {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(120px, -50%);
-			width: 400px;
+			width: 480px;
 			height: auto;
-			object-fit: contain;
 
+			transform: translate(140px, -50%);
 			opacity: 0;
+
 			transition: all 1s ease;
 			pointer-events: none;
 		}
 
-		/* when active */
+		/* triggers ONLY when section becomes active */
 		#about.active .img22 {
 			opacity: 1;
 			transform: translate(0px, -50%);
@@ -124,24 +133,27 @@
 		<div class="about-content clearfix section-content">
 
 			<div class="left">
-				<h1>A Propos De Nous</h1>
+				<h1 class="fade fade1">A Propos De Nous</h1>
+
 				<p class="fade fade2">
 					R&R Conception est une entreprise spécialisée dans la création de solutions sur mesure. Nous allions design, innovation et qualité pour répondre aux besoins de nos clients
 				</p>
-				<p class="fade fade1">
+
+				<p class="fade fade3">
 					Concepteur de bâtiments expérimenté et autonome avec une expérience avérée dans la gestion de projets privés, la conception et la supervision des relations avec les clients
 				</p>
 			</div>
 
 			<div class="right">
-				<img class="my-photo fade fade4" src="./image1.jpg">
-				<img class="img22" src="./image22.jpg">
+				<img class="my-photo fade fade4" src="./image1.jpg" alt="My photo">
+				<img class="img22" src="./image22.jpg" alt="About image">
 			</div>
 
 		</div>
 	</div>
 </div>
 
+<!-- WORKS -->
 <div id="works" class="section-wrap section-works">
 	<div class="section">
 		<div class="works-content section-content">
@@ -150,18 +162,22 @@
 			<div class="works-list clearfix">
 				<div class="works-item first fade fade1">
 					<img src="put image here" width="300" height="180">
+					<div class="work-info"><h2>design</h2></div>
 				</div>
 
 				<div class="works-item fade fade2">
 					<img src="put image here" width="300" height="180">
+					<div class="work-info"><h2>design</h2></div>
 				</div>
 
 				<div class="works-item fade fade3">
 					<img src="put image here" width="300" height="180">
+					<div class="work-info"><h2>design</h2></div>
 				</div>
 
 				<div class="works-item fade fade4">
 					<img src="put image here" width="300" height="180">
+					<div class="work-info"><h2>design</h2></div>
 				</div>
 			</div>
 
@@ -170,6 +186,7 @@
 	</div>
 </div>
 
+<!-- CONTACT -->
 <div id="contact" class="section-wrap section-contact">
 	<div class="section">
 		<div class="contact-content clearfix section-content">
@@ -194,7 +211,6 @@
 <script src="./js/global.js"></script>
 
 <script>
-	// trigger animation only when about is visible
 	const about = document.querySelector("#about");
 
 	const observer = new IntersectionObserver((entries) => {
