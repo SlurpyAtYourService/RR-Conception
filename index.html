@@ -36,7 +36,7 @@
 		}
 
 		/* ===================== */
-		/* LAYOUT TWEAKS */
+		/* LAYOUT FIX */
 		/* ===================== */
 
 		.section-about .about-content {
@@ -44,35 +44,35 @@
 			align-items: center;
 		}
 
-		/* text slightly more left + less vertical “stretch feel” */
+		/* TEXT: fix “vertical broken lines” feel */
 		.section-about .left {
-			transform: translateX(-70px);
+			transform: translateX(-95px);
 		}
 
 		.section-about .left h1 {
-			margin-bottom: 18px;
+			margin-bottom: 10px;
 		}
 
 		.section-about .left p {
-			margin-bottom: 12px;
-			line-height: 1.5;
+			margin-bottom: 8px;
+			line-height: 1.4;
+			white-space: normal;
 		}
 
-		/* image slightly more right */
+		/* IMAGE: move LEFT a bit more */
 		.section-about .right {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			transform: translateX(80px);
+			transform: translateX(50px);
 		}
 
-		/* image kept stable size */
 		.section-about .img22 {
 			width: 650px;
 			max-width: none;
 			height: auto;
 
-			transform: translateX(90px);
+			transform: translateX(40px);
 			opacity: 0;
 			transition: all 0.8s ease;
 		}
@@ -113,7 +113,6 @@
 	</div>
 </div>
 
-<!-- ABOUT -->
 <div id="about" class="section-wrap section-about">
 	<div class="section">
 		<div class="about-content clearfix section-content">
@@ -137,59 +136,6 @@
 		</div>
 	</div>
 </div>
-
-<div id="works" class="section-wrap section-works">
-	<div class="section">
-		<div class="works-content section-content">
-			<h1>My Work</h1>
-
-			<div class="works-list clearfix">
-				<div class="works-item first fade fade1">
-					<img src="put image here" width="300" height="180">
-				</div>
-
-				<div class="works-item fade fade2">
-					<img src="put image here" width="300" height="180">
-				</div>
-
-				<div class="works-item fade fade3">
-					<img src="put image here" width="300" height="180">
-				</div>
-
-				<div class="works-item fade fade4">
-					<img src="put image here" width="300" height="180">
-				</div>
-			</div>
-
-			<a class="more-link" href="https://instagram.com/rt_graphic">more..</a>
-		</div>
-	</div>
-</div>
-
-<div id="contact" class="section-wrap section-contact">
-	<div class="section">
-		<div class="contact-content clearfix section-content">
-			<h1>Contact Me</h1>
-
-			<div class="left">
-				<div class="contact-ways fade fade1">
-					<h2>Socials</h2>
-					<ul>
-						<li>email: ramban77@yahoo.com</li>
-						<li>téléphone: 07 82 77 46 64</li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-
-<div class="overlay"></div>
-<div class="state-indicator"></div>
-
-<script src="./js/jquery-1.9.1.min.js"></script>
-<script src="./js/global.js"></script>
 
 </body>
 </html>
