@@ -36,7 +36,7 @@
 		}
 
 		/* ===================== */
-		/* STABLE LAYOUT FIX */
+		/* LAYOUT TWEAKS */
 		/* ===================== */
 
 		.section-about .about-content {
@@ -44,27 +44,35 @@
 			align-items: center;
 		}
 
+		/* text slightly more left + less vertical “stretch feel” */
 		.section-about .left {
-			transform: translateX(-40px);
+			transform: translateX(-70px);
 		}
 
+		.section-about .left h1 {
+			margin-bottom: 18px;
+		}
+
+		.section-about .left p {
+			margin-bottom: 12px;
+			line-height: 1.5;
+		}
+
+		/* image slightly more right */
 		.section-about .right {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			transform: translateX(50px);
+			transform: translateX(80px);
 		}
 
-		/* ===================== */
-		/* IMAGE (40% SMALLER FIX) */
-		/* ===================== */
-
+		/* image kept stable size */
 		.section-about .img22 {
-			width: 650px; /* reduced from 900px */
+			width: 650px;
 			max-width: none;
 			height: auto;
 
-			transform: translateX(100px);
+			transform: translateX(90px);
 			opacity: 0;
 			transition: all 0.8s ease;
 		}
