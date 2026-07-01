@@ -36,13 +36,13 @@
 		}
 
 		/* ===================== */
-		/* ABOUT TEXT POSITION */
+		/* ABOUT TEXT FIX */
 		/* ===================== */
 
 		.left {
 			width: 50%;
-			padding-right: 60px;
-			transform: translateX(-20px);
+			padding-right: 50px;
+			transform: translateX(-10px);
 		}
 
 		.left h1 {
@@ -76,13 +76,17 @@
 			top: 50%;
 			left: 50%;
 
-			/* hidden until about section is active */
+			/* start off to the right */
 			transform: translate(120px, -50%);
 			opacity: 0;
+
+			/* IMPORTANT: prevents global fade animation conflicts */
+			animation: none !important;
 
 			transition: transform 1s ease, opacity 1s ease;
 		}
 
+		/* ONLY WHEN SECTION IS ACTIVE */
 		#about.active .img22 {
 			transform: translate(-50%, -50%);
 			opacity: 1;
@@ -137,7 +141,7 @@
 			</div>
 
 			<div class="right">
-				<img class="img22 fade fade4" src="./image22.jpg" alt="About image">
+				<img class="img22" src="./image22.jpg" alt="About image">
 			</div>
 
 		</div>
