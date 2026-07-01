@@ -35,10 +35,6 @@
 			font-weight: 400;
 		}
 
-		/* ===================== */
-		/* ABOUT LAYOUT FIX */
-		/* ===================== */
-
 		.about-content {
 			display: flex;
 			align-items: center;
@@ -68,11 +64,7 @@
 			min-height: 750px;
 		}
 
-		/* ===================== */
-		/* IMAGE FIX (ONLY ONE ACTIVE IMAGE) */
-		/* ===================== */
-
-		.my-photo {
+		.img22 {
 			width: 560px;
 			height: auto;
 			object-fit: contain;
@@ -80,23 +72,15 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-
-			/* start OFF SCREEN RIGHT */
 			transform: translate(120px, -50%);
 			opacity: 0;
 
 			transition: all 1s ease;
 		}
 
-		/* ONLY WHEN ABOUT IS ACTIVE */
-		#about.active .my-photo {
+		#about.active .img22 {
 			transform: translate(-50%, -50%);
 			opacity: 1;
-		}
-
-		/* prevent accidental second image behavior */
-		.img22 {
-			display: none !important;
 		}
 	</style>
 </head>
@@ -130,7 +114,6 @@
 	</div>
 </div>
 
-<!-- ABOUT -->
 <div id="about" class="section-wrap section-about">
 	<div class="section">
 		<div class="about-content clearfix section-content">
@@ -148,15 +131,13 @@
 			</div>
 
 			<div class="right">
-				<!-- ONLY IMAGE USED -->
-				<img class="my-photo fade fade4" src="./image1.jpg" alt="My photo">
+				<img class="img22 fade fade4" src="./image22.jpg" alt="About image">
 			</div>
 
 		</div>
 	</div>
 </div>
 
-<!-- WORKS -->
 <div id="works" class="section-wrap section-works">
 	<div class="section">
 		<div class="works-content section-content">
@@ -185,7 +166,6 @@
 	</div>
 </div>
 
-<!-- CONTACT -->
 <div id="contact" class="section-wrap section-contact">
 	<div class="section">
 		<div class="contact-content clearfix section-content">
