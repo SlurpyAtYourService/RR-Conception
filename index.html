@@ -36,23 +36,35 @@
 		}
 
 		/* ===================== */
-		/* ABOUT SECTION FIX ONLY */
+		/* STABLE LAYOUT FIX */
 		/* ===================== */
 
+		.section-about .about-content {
+			display: flex;
+			align-items: center;
+		}
+
 		.section-about .left {
-			transform: translateX(-70px);
+			transform: translateX(-40px);
 		}
 
 		.section-about .right {
-			transform: translateX(90px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform: translateX(50px);
 		}
 
+		/* ===================== */
+		/* IMAGE (40% SMALLER FIX) */
+		/* ===================== */
+
 		.section-about .img22 {
-			width: 900px;
+			width: 650px; /* reduced from 900px */
 			max-width: none;
 			height: auto;
 
-			transform: translateX(120px);
+			transform: translateX(100px);
 			opacity: 0;
 			transition: all 0.8s ease;
 		}
