@@ -36,36 +36,7 @@
 		}
 
 		/* ===================== */
-		/* FIX SCROLL (IMPORTANT) */
-		/* ===================== */
-
-		body {
-			overflow-y: auto !important;
-			overflow-x: hidden;
-		}
-
-		/* ===================== */
-		/* LOADING FIX */
-		/* ===================== */
-
-		.loading {
-			position: fixed;
-			inset: 0;
-			width: 100vw;
-			height: 100vh;
-			z-index: 9999;
-			background: #ecf0f1;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.finish-loading .loading {
-			display: none;
-		}
-
-		/* ===================== */
-		/* ABOUT SECTION */
+		/* ABOUT LAYOUT (UNCHANGED LOGIC) */
 		/* ===================== */
 
 		.section-about .about-content {
@@ -170,6 +141,21 @@
 
 <script src="./js/jquery-1.9.1.min.js"></script>
 <script src="./js/global.js"></script>
+
+<script>
+/* RESTORE SCROLL SYSTEM (SAFE + MINIMAL) */
+$(document).ready(function () {
+
+	$('a.scroll-tip').on('click', function (e) {
+		e.preventDefault();
+
+		$('html, body').animate({
+			scrollTop: $('#about').offset().top
+		}, 800);
+	});
+
+});
+</script>
 
 <script>
 window.addEventListener("load", () => {
