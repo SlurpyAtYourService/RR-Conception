@@ -36,7 +36,33 @@
 		}
 
 		/* ===================== */
-		/* LAYOUT FIX */
+		/* LOADING FIX */
+		/* ===================== */
+
+		.loading {
+			position: fixed;
+			inset: 0;
+			width: 100vw;
+			height: 100vh;
+			z-index: 9999;
+			background: #ecf0f1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.loading-circle,
+		.loading-info {
+			z-index: 10000;
+		}
+
+		/* hide after load */
+		.finish-loading .loading {
+			display: none;
+		}
+
+		/* ===================== */
+		/* ABOUT SECTION */
 		/* ===================== */
 
 		.section-about .about-content {
@@ -44,7 +70,6 @@
 			align-items: center;
 		}
 
-		/* TEXT: fix “vertical broken lines” feel */
 		.section-about .left {
 			transform: translateX(-95px);
 		}
@@ -56,10 +81,8 @@
 		.section-about .left p {
 			margin-bottom: 8px;
 			line-height: 1.4;
-			white-space: normal;
 		}
 
-		/* IMAGE: move LEFT a bit more */
 		.section-about .right {
 			display: flex;
 			align-items: center;
@@ -113,6 +136,7 @@
 	</div>
 </div>
 
+<!-- ABOUT -->
 <div id="about" class="section-wrap section-about">
 	<div class="section">
 		<div class="about-content clearfix section-content">
@@ -136,6 +160,66 @@
 		</div>
 	</div>
 </div>
+
+<div id="works" class="section-wrap section-works">
+	<div class="section">
+		<div class="works-content section-content">
+			<h1>My Work</h1>
+
+			<div class="works-list clearfix">
+				<div class="works-item first fade fade1">
+					<img src="put image here" width="300" height="180">
+				</div>
+
+				<div class="works-item fade fade2">
+					<img src="put image here" width="300" height="180">
+				</div>
+
+				<div class="works-item fade fade3">
+					<img src="put image here" width="300" height="180">
+				</div>
+
+				<div class="works-item fade fade4">
+					<img src="put image here" width="300" height="180">
+				</div>
+			</div>
+
+			<a class="more-link" href="https://instagram.com/rt_graphic">more..</a>
+		</div>
+	</div>
+</div>
+
+<div id="contact" class="section-wrap section-contact">
+	<div class="section">
+		<div class="contact-content clearfix section-content">
+			<h1>Contact Me</h1>
+
+			<div class="left">
+				<div class="contact-ways fade fade1">
+					<h2>Socials</h2>
+					<ul>
+						<li>email: ramban77@yahoo.com</li>
+						<li>téléphone: 07 82 77 46 64</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="overlay"></div>
+<div class="state-indicator"></div>
+
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/global.js"></script>
+
+<script>
+window.addEventListener("load", () => {
+	document.body.classList.remove("loading-process");
+	document.body.classList.add("finish-loading");
+});
+</script>
 
 </body>
 </html>
