@@ -23,24 +23,24 @@
 			z-index: 999;
 		}
 
-		/* NEON GLOW TEXT */
+		/* GLOBAL WHITE GLOW (affects all text inside glow containers) */
 		.glow {
 			text-shadow:
-				0 0 40px rgba(0, 200, 255, 0.8),
-				0 0 20px rgba(0, 200, 255, 0.6),
-				0 0 10px rgba(0, 200, 255, 0.4);
+				0 0 40px rgba(255,255,255,0.55),
+				0 0 20px rgba(255,255,255,0.35),
+				0 0 10px rgba(255,255,255,0.2);
 		}
 	</style>
 </head>
 
 <body class="loading-process">
 
-<div class="loading">
+<div class="loading glow">
 	<div class="loading-circle"></div>
 	<div class="loading-info">loading..</div>
 </div>
 
-<div class="section-header">
+<div class="section-header glow">
 	<div class="section">
 		<nav class="nav" role="navigation">
 			<ul>
@@ -62,10 +62,10 @@
 
 <div class="section-wrap section-fristpage">
 	<div class="section">
-		<div class="section-content">
-			<p class="fade fade1 glow">Hi, im Rami Banbouk</p>
-			<p class="fade fade2 glow">i do designing</p>
-			<p class="fade fade3 glow">i do designing</p>
+		<div class="section-content glow">
+			<p class="fade fade1">Hi, im Rami Banbouk</p>
+			<p class="fade fade2">i do designing</p>
+			<p class="fade fade3">i do designing</p>
 		</div>
 		<a href="#" class="scroll-tip fade fade4">Scroll down</a>
 	</div>
@@ -73,9 +73,9 @@
 
 <div id="about" class="section-wrap section-about">
 	<div class="section">
-		<div class="about-content clearfix section-content">
+		<div class="about-content clearfix section-content glow">
 			<div class="left">
-				<h1 class="glow">About Me</h1>
+				<h1>About Me</h1>
 				<p class="fade fade1">i do designing</p>
 				<p class="fade fade2">i do designing</p>
 				<p class="fade fade3">i do designing</p>
@@ -93,8 +93,8 @@
 
 <div id="works" class="section-wrap section-works">
 	<div class="section">
-		<div class="works-content section-content">
-			<h1 class="glow">My Work</h1>
+		<div class="works-content section-content glow">
+			<h1>My Work</h1>
 
 			<div class="works-list clearfix">
 				<div class="works-item first fade fade1">
@@ -125,8 +125,8 @@
 
 <div id="contact" class="section-wrap section-contact">
 	<div class="section">
-		<div class="contact-content clearfix section-content">
-			<h1 class="glow">Contact Me</h1>
+		<div class="contact-content clearfix section-content glow">
+			<h1>Contact Me</h1>
 			<div class="left">
 				<div class="contact-ways fade fade1">
 					<h2>Socials</h2>
