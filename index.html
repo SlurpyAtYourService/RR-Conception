@@ -7,6 +7,29 @@
 
 	<link rel="stylesheet" href="./style.css" type="text/css" media="all" />
 	<link rel="shortcut icon" href="favicon.png"/>
+
+	<style>
+		/* VIGNETTE */
+		body::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+			pointer-events: none;
+			background: radial-gradient(
+				circle,
+				rgba(0,0,0,0) 55%,
+				rgba(0,0,0,0.65) 100%
+			);
+			z-index: 999;
+		}
+
+		/* GLOW TEXT (range 40, intensity 20) */
+		.glow {
+			text-shadow:
+				0 0 40px rgba(255,255,255,0.2),
+				0 0 20px rgba(255,255,255,0.2);
+		}
+	</style>
 </head>
 
 <body class="loading-process">
@@ -39,9 +62,9 @@
 <div class="section-wrap section-fristpage">
 	<div class="section">
 		<div class="section-content">
-			<p class="fade fade1">Hi, im Rami Banbouk</p>
-			<p class="fade fade2">i do designing</p>
-			<p class="fade fade3">i do designing</p>
+			<p class="fade fade1 glow">Hi, im Rami Banbouk</p>
+			<p class="fade fade2 glow">i do designing</p>
+			<p class="fade fade3 glow">i do designing</p>
 		</div>
 		<a href="#" class="scroll-tip fade fade4">Scroll down</a>
 	</div>
@@ -51,7 +74,7 @@
 	<div class="section">
 		<div class="about-content clearfix section-content">
 			<div class="left">
-				<h1>About Me</h1>
+				<h1 class="glow">About Me</h1>
 				<p class="fade fade1">i do designing</p>
 				<p class="fade fade2">i do designing</p>
 				<p class="fade fade3">i do designing</p>
@@ -70,7 +93,7 @@
 <div id="works" class="section-wrap section-works">
 	<div class="section">
 		<div class="works-content section-content">
-			<h1>My Work</h1>
+			<h1 class="glow">My Work</h1>
 
 			<div class="works-list clearfix">
 				<div class="works-item first fade fade1">
@@ -94,7 +117,7 @@
 				</div>
 			</div>
 
-			<a class="more-link" href="https://instagram.com/rt_graphic">more..</a>
+			<a class="more-link glow" href="https://instagram.com/rt_graphic">more..</a>
 		</div>
 	</div>
 </div>
@@ -102,7 +125,7 @@
 <div id="contact" class="section-wrap section-contact">
 	<div class="section">
 		<div class="contact-content clearfix section-content">
-			<h1>Contact Me</h1>
+			<h1 class="glow">Contact Me</h1>
 			<div class="left">
 				<div class="contact-ways fade fade1">
 					<h2>Socials</h2>
