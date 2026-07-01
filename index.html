@@ -39,6 +39,23 @@
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight: 400;
 		}
+
+		/* IMAGE 22 ANIMATION */
+		.img22 {
+			display: block;
+			margin-top: 20px;
+			opacity: 0;
+			transform: translateY(30px);
+			animation: slideIn 1s ease forwards;
+			animation-delay: 0.3s;
+		}
+
+		@keyframes slideIn {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
 	</style>
 </head>
 
@@ -86,11 +103,16 @@
 
 			<div class="right">
 				<img class="my-photo fade fade4"
-				     src="./image22.jpg"
+				     src="./image1.jpg"
 				     alt="My photo"
 				     width="335"
-				     height="540"
-				     onerror="this.style.display='none'">
+				     height="540">
+
+				<img class="img22"
+				     src="./image22.jpg"
+				     alt="About image"
+				     width="335"
+				     height="540">
 			</div>
 		</div>
 	</div>
