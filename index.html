@@ -35,15 +35,14 @@
 			font-weight: 400;
 		}
 
-		.about-content {
-			display: flex;
-			align-items: center;
-		}
+		/* ===================== */
+		/* ABOUT TEXT POSITION */
+		/* ===================== */
 
 		.left {
 			width: 50%;
 			padding-right: 60px;
-			transform: translateY(-10px);
+			transform: translateX(-20px);
 		}
 
 		.left h1 {
@@ -55,27 +54,33 @@
 			line-height: 1.7;
 		}
 
+		/* ===================== */
+		/* RIGHT IMAGE FIX */
+		/* ===================== */
+
 		.right {
 			width: 50%;
 			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			min-height: 750px;
+			min-height: 800px;
 		}
 
 		.img22 {
-			width: 560px;
+			width: 650px;
 			height: auto;
 			object-fit: contain;
 
 			position: absolute;
 			top: 50%;
 			left: 50%;
+
+			/* hidden until about section is active */
 			transform: translate(120px, -50%);
 			opacity: 0;
 
-			transition: all 1s ease;
+			transition: transform 1s ease, opacity 1s ease;
 		}
 
 		#about.active .img22 {
@@ -114,6 +119,7 @@
 	</div>
 </div>
 
+<!-- ABOUT -->
 <div id="about" class="section-wrap section-about">
 	<div class="section">
 		<div class="about-content clearfix section-content">
@@ -138,6 +144,7 @@
 	</div>
 </div>
 
+<!-- WORKS -->
 <div id="works" class="section-wrap section-works">
 	<div class="section">
 		<div class="works-content section-content">
@@ -166,6 +173,7 @@
 	</div>
 </div>
 
+<!-- CONTACT -->
 <div id="contact" class="section-wrap section-contact">
 	<div class="section">
 		<div class="contact-content clearfix section-content">
