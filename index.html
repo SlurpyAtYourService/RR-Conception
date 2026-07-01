@@ -9,17 +9,12 @@
 	<link rel="shortcut icon" href="favicon.png"/>
 
 	<style>
-		/* SOFT VIGNETTE */
 		body::before {
 			content: "";
 			position: fixed;
 			inset: 0;
 			pointer-events: none;
-			background: radial-gradient(
-				circle,
-				rgba(0,0,0,0) 70%,
-				rgba(0,0,0,0.35) 100%
-			);
+			background: radial-gradient(circle, rgba(0,0,0,0) 70%, rgba(0,0,0,0.35) 100%);
 			z-index: 999;
 		}
 
@@ -40,13 +35,30 @@
 			font-weight: 400;
 		}
 
-		/* IMAGE 22 ANIMATION */
-		.img22 {
+		/* RIGHT COLUMN FIX */
+		.right {
+			position: relative;
+			min-height: 540px;
+		}
+
+		.right img {
 			display: block;
-			margin-top: 20px;
+			max-width: 100%;
+		}
+
+		.my-photo {
+			position: relative;
+			z-index: 2;
+		}
+
+		.img22 {
+			position: absolute;
+			top: 0;
+			left: 0;
+
 			opacity: 0;
-			transform: translateY(30px);
-			animation: slideIn 1s ease forwards;
+			transform: translateY(25px);
+			animation: slideIn 0.9s ease forwards;
 			animation-delay: 0.3s;
 		}
 
@@ -125,22 +137,22 @@
 
 			<div class="works-list clearfix">
 				<div class="works-item first fade fade1">
-					<img src="put image here" alt="" width="300" height="180">
+					<img src="put image here" width="300" height="180">
 					<div class="work-info"><h2>design</h2></div>
 				</div>
 
 				<div class="works-item fade fade2">
-					<img src="put image here" alt="" width="300" height="180">
+					<img src="put image here" width="300" height="180">
 					<div class="work-info"><h2>design</h2></div>
 				</div>
 
 				<div class="works-item fade fade3">
-					<img src="put image here" alt="" width="300" height="180">
+					<img src="put image here" width="300" height="180">
 					<div class="work-info"><h2>design</h2></div>
 				</div>
 
 				<div class="works-item fade fade4">
-					<img src="put image here" alt="" width="300" height="180">
+					<img src="put image here" width="300" height="180">
 					<div class="work-info"><h2>design</h2></div>
 				</div>
 			</div>
@@ -170,8 +182,8 @@
 <div class="overlay"></div>
 <div class="state-indicator"></div>
 
-<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
-<script src="js/global.js"></script>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/global.js"></script>
 
 </body>
 </html>
