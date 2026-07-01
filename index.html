@@ -36,6 +36,15 @@
 		}
 
 		/* ===================== */
+		/* FIX SCROLL (IMPORTANT) */
+		/* ===================== */
+
+		body {
+			overflow-y: auto !important;
+			overflow-x: hidden;
+		}
+
+		/* ===================== */
 		/* LOADING FIX */
 		/* ===================== */
 
@@ -56,7 +65,7 @@
 		}
 
 		/* ===================== */
-		/* ABOUT FIX (FINAL) */
+		/* ABOUT SECTION */
 		/* ===================== */
 
 		.section-about .about-content {
@@ -64,10 +73,13 @@
 			align-items: center;
 		}
 
-		/* TEXT FIX: wider block = no stacking feeling */
 		.section-about .left {
 			width: 55%;
 			transform: translateX(-120px);
+		}
+
+		.section-about .left h1 {
+			margin-bottom: 20px;
 		}
 
 		.section-about .left p {
@@ -75,11 +87,6 @@
 			line-height: 1.6;
 		}
 
-		.section-about .left h1 {
-			margin-bottom: 20px;
-		}
-
-		/* IMAGE FIX: push RIGHT */
 		.section-about .right {
 			width: 45%;
 			display: flex;
@@ -133,6 +140,7 @@
 	</div>
 </div>
 
+<!-- ABOUT -->
 <div id="about" class="section-wrap section-about">
 	<div class="section">
 		<div class="about-content clearfix section-content">
