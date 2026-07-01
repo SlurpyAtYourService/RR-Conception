@@ -35,48 +35,31 @@
 			font-weight: 400;
 		}
 
-		/* LAYOUT (UNCHANGED SAFE BASE) */
-		.about-content {
-			display: flex;
-			align-items: center;
+		/* ===================== */
+		/* ABOUT SECTION FIX ONLY */
+		/* ===================== */
+
+		.section-about .left {
+			transform: translateX(-70px);
 		}
 
-		.left {
-			width: 50%;
-			padding-right: 100px;
+		.section-about .right {
+			transform: translateX(90px);
 		}
 
-		.left h1 {
-			font-size: 74px;
-		}
-
-		.left p {
-			font-size: 22px;
-			line-height: 1.8;
-		}
-
-		.right {
-			width: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			min-height: 800px;
-		}
-
-		/* IMAGE FIX (BIG BUT CONTROLLED) */
-		.img22 {
-			width: min(900px, 95%); /* BIG but safe */
+		.section-about .img22 {
+			width: 900px;
+			max-width: none;
 			height: auto;
-			object-fit: contain;
 
+			transform: translateX(120px);
 			opacity: 0;
-			transform: translate(120px, 0);
 			transition: all 0.8s ease;
 		}
 
-		.fade.fade-in.img22 {
+		.section-about .fade.fade-in.img22 {
+			transform: translateX(0);
 			opacity: 1;
-			transform: translate(0, 0);
 		}
 	</style>
 </head>
