@@ -36,7 +36,7 @@
 		}
 
 		/* ===================== */
-		/* ABOUT LAYOUT */
+		/* ABOUT LAYOUT FIX */
 		/* ===================== */
 
 		.about-content {
@@ -47,17 +47,18 @@
 		.left {
 			width: 50%;
 			padding-right: 60px;
-			transform: translateY(-10px);
+			transform: translateY(-15px);
 		}
 
+		/* 🔥 BIGGER TEXT */
 		.left h1 {
-			font-size: 54px;
+			font-size: 64px;
 			margin-bottom: 20px;
 		}
 
 		.left p {
-			font-size: 18px;
-			line-height: 1.6;
+			font-size: 20px;
+			line-height: 1.7;
 		}
 
 		.right {
@@ -66,34 +67,40 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			min-height: 650px;
+			min-height: 700px;
 		}
 
+		/* 🔥 FIX IMAGE 1 (NO DROP DOWN BUG) */
 		.my-photo {
-			width: 460px;
+			width: 520px;
 			height: auto;
-			position: relative;
+			object-fit: contain;
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 			z-index: 2;
 		}
 
+		/* IMAGE 22 (slides from right, same size style) */
 		.img22 {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			width: 480px;
+			width: 520px;
 			height: auto;
+			object-fit: contain;
 
-			transform: translate(140px, -50%);
+			transform: translate(120px, -50%);
 			opacity: 0;
-
 			transition: all 1s ease;
 			pointer-events: none;
 		}
 
-		/* triggers ONLY when section becomes active */
 		#about.active .img22 {
 			opacity: 1;
-			transform: translate(0px, -50%);
+			transform: translate(-50%, -50%);
 		}
 	</style>
 </head>
@@ -162,22 +169,18 @@
 			<div class="works-list clearfix">
 				<div class="works-item first fade fade1">
 					<img src="put image here" width="300" height="180">
-					<div class="work-info"><h2>design</h2></div>
 				</div>
 
 				<div class="works-item fade fade2">
 					<img src="put image here" width="300" height="180">
-					<div class="work-info"><h2>design</h2></div>
 				</div>
 
 				<div class="works-item fade fade3">
 					<img src="put image here" width="300" height="180">
-					<div class="work-info"><h2>design</h2></div>
 				</div>
 
 				<div class="works-item fade fade4">
 					<img src="put image here" width="300" height="180">
-					<div class="work-info"><h2>design</h2></div>
 				</div>
 			</div>
 
