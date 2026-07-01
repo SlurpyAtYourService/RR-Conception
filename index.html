@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" href="favicon.png"/>
 
 	<style>
-		/* VIGNETTE */
+		/* SOFT VIGNETTE */
 		body::before {
 			content: "";
 			position: fixed;
@@ -17,17 +17,18 @@
 			pointer-events: none;
 			background: radial-gradient(
 				circle,
-				rgba(0,0,0,0) 55%,
-				rgba(0,0,0,0.65) 100%
+				rgba(0,0,0,0) 70%,
+				rgba(0,0,0,0.35) 100%
 			);
 			z-index: 999;
 		}
 
-		/* GLOW TEXT (range 40, intensity 20) */
+		/* NEON GLOW TEXT */
 		.glow {
 			text-shadow:
-				0 0 40px rgba(255,255,255,0.2),
-				0 0 20px rgba(255,255,255,0.2);
+				0 0 40px rgba(0, 200, 255, 0.8),
+				0 0 20px rgba(0, 200, 255, 0.6),
+				0 0 10px rgba(0, 200, 255, 0.4);
 		}
 	</style>
 </head>
