@@ -35,9 +35,7 @@
 			font-weight: 400;
 		}
 
-		/* ===================== */
-		/* ABOUT LAYOUT (UNCHANGED LOGIC) */
-		/* ===================== */
+		/* ONLY ABOUT FIXES (NO LAYOUT BREAK) */
 
 		.section-about .about-content {
 			display: flex;
@@ -46,15 +44,11 @@
 
 		.section-about .left {
 			width: 55%;
-			transform: translateX(-120px);
-		}
-
-		.section-about .left h1 {
-			margin-bottom: 20px;
+			transform: translateX(-100px);
 		}
 
 		.section-about .left p {
-			margin-bottom: 16px;
+			margin-bottom: 14px;
 			line-height: 1.6;
 		}
 
@@ -62,7 +56,7 @@
 			width: 45%;
 			display: flex;
 			justify-content: flex-end;
-			transform: translateX(120px);
+			transform: translateX(80px);
 		}
 
 		.section-about .img22 {
@@ -84,11 +78,13 @@
 
 <body class="loading-process">
 
+<!-- LOADING (UNCHANGED) -->
 <div class="loading">
 	<div class="loading-circle"></div>
 	<div class="loading-info">loading..</div>
 </div>
 
+<!-- NAV (UNCHANGED) -->
 <div class="section-header">
 	<div class="section">
 		<nav class="nav" role="navigation">
@@ -98,6 +94,7 @@
 	<div class="nav-bg"></div>
 </div>
 
+<!-- BACKGROUND VIDEO -->
 <div class="home-bg">
 	<video autoplay muted loop playsinline
 		style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover;">
@@ -105,6 +102,7 @@
 	</video>
 </div>
 
+<!-- FIRST SECTION -->
 <div class="section-wrap section-fristpage">
 	<div class="section">
 		<a href="#" class="scroll-tip fade fade4">Scroll down</a>
@@ -136,26 +134,28 @@
 	</div>
 </div>
 
+<!-- OTHER SECTIONS (UNCHANGED) -->
+<div id="works" class="section-wrap section-works">
+	<div class="section">
+		<div class="works-content section-content">
+			<h1>My Work</h1>
+		</div>
+	</div>
+</div>
+
+<div id="contact" class="section-wrap section-contact">
+	<div class="section">
+		<div class="contact-content clearfix section-content">
+			<h1>Contact Me</h1>
+		</div>
+	</div>
+</div>
+
 <div class="overlay"></div>
 <div class="state-indicator"></div>
 
 <script src="./js/jquery-1.9.1.min.js"></script>
 <script src="./js/global.js"></script>
-
-<script>
-/* RESTORE SCROLL SYSTEM (SAFE + MINIMAL) */
-$(document).ready(function () {
-
-	$('a.scroll-tip').on('click', function (e) {
-		e.preventDefault();
-
-		$('html, body').animate({
-			scrollTop: $('#about').offset().top
-		}, 800);
-	});
-
-});
-</script>
 
 <script>
 window.addEventListener("load", () => {
