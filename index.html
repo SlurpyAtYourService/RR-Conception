@@ -35,7 +35,9 @@
 			font-weight: 400;
 		}
 
-		/* ONLY ABOUT FIXES (NO LAYOUT BREAK) */
+		/* ===================== */
+		/* ABOUT SECTION (UNCHANGED WORKING VERSION) */
+		/* ===================== */
 
 		.section-about .about-content {
 			display: flex;
@@ -78,13 +80,13 @@
 
 <body class="loading-process">
 
-<!-- LOADING (UNCHANGED) -->
+<!-- LOADING SCREEN -->
 <div class="loading">
 	<div class="loading-circle"></div>
 	<div class="loading-info">loading..</div>
 </div>
 
-<!-- NAV (UNCHANGED) -->
+<!-- NAV -->
 <div class="section-header">
 	<div class="section">
 		<nav class="nav" role="navigation">
@@ -94,7 +96,7 @@
 	<div class="nav-bg"></div>
 </div>
 
-<!-- BACKGROUND VIDEO -->
+<!-- BACKGROUND -->
 <div class="home-bg">
 	<video autoplay muted loop playsinline
 		style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover;">
@@ -134,7 +136,7 @@
 	</div>
 </div>
 
-<!-- OTHER SECTIONS (UNCHANGED) -->
+<!-- WORKS -->
 <div id="works" class="section-wrap section-works">
 	<div class="section">
 		<div class="works-content section-content">
@@ -143,6 +145,7 @@
 	</div>
 </div>
 
+<!-- CONTACT -->
 <div id="contact" class="section-wrap section-contact">
 	<div class="section">
 		<div class="contact-content clearfix section-content">
@@ -157,10 +160,17 @@
 <script src="./js/jquery-1.9.1.min.js"></script>
 <script src="./js/global.js"></script>
 
+<!-- ✅ FIX: RESTORE CONTENT VISIBILITY -->
 <script>
-window.addEventListener("load", () => {
+window.addEventListener("load", function () {
 	document.body.classList.remove("loading-process");
 	document.body.classList.add("finish-loading");
+
+	// safety fallback
+	setTimeout(() => {
+		document.body.classList.remove("loading-process");
+		document.body.classList.add("finish-loading");
+	}, 1500);
 });
 </script>
 
