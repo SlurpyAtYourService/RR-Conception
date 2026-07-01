@@ -9,6 +9,7 @@
 	<link rel="shortcut icon" href="favicon.png"/>
 
 	<style>
+		/* VIGNETTE */
 		body::before {
 			content: "";
 			position: fixed;
@@ -35,7 +36,16 @@
 			font-weight: 400;
 		}
 
-		/* ABOUT LAYOUT FIX */
+		/* FIX OVERLAP / LAYOUT SAFETY */
+		.section-wrap {
+			position: relative;
+			width: 100%;
+		}
+
+		.section-about {
+			overflow: hidden;
+		}
+
 		.about-content {
 			display: flex;
 			align-items: center;
@@ -44,42 +54,52 @@
 
 		.left {
 			width: 50%;
-			transform: translateX(20px);
+			padding-right: 40px;
 		}
 
 		.right {
 			width: 50%;
 			display: flex;
 			justify-content: center;
-			align-items: center;
+			position: relative;
 		}
 
-		.right img {
+		/* ONLY ONE BASE IMAGE */
+		.my-photo {
 			width: 420px;
 			height: auto;
 			display: block;
 		}
 
-		/* IMAGE ANIMATION (offscreen right → in) */
+		/* SECOND IMAGE (hidden until scroll) */
 		.img22 {
+			width: 450px;
+			height: auto;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+
 			opacity: 0;
-			transform: translateX(80px);
+			transform: translateX(120px);
 			transition: all 1s ease;
+			pointer-events: none;
 		}
 
-		.about.active .img22 {
+		/* trigger animation */
+		.section-about.active .img22 {
 			opacity: 1;
 			transform: translateX(0);
-		}
-
-		.my-photo {
-			width: 420px;
-			height: auto;
 		}
 	</style>
 </head>
 
 <body class="loading-process">
+
+<div class="loading">
+	<div class="loading-circle"></div>
+	<div class="loading-info">loading..</div>
+</div>
 
 <div class="home-bg">
     <video autoplay muted loop playsinline
@@ -88,10 +108,18 @@
     </video>
 </div>
 
-<div id="about" class="section-wrap section-about about">
+<!-- HOME -->
+<div class="section-wrap section-fristpage">
+	<div class="section">
+		<a href="#" class="scroll-tip fade fade4">Scroll down</a>
+	</div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section-wrap section-about">
 	<div class="section">
 		<div class="about-content section-content">
-			
+
 			<div class="left">
 				<h1>A Propos De Nous</h1>
 				<p>
@@ -103,20 +131,44 @@
 			</div>
 
 			<div class="right">
-				<img class="my-photo"
-				     src="./image1.jpg">
-
-				<img class="img22"
-				     src="./image22.jpg">
+				<img class="my-photo" src="./image1.jpg">
+				<img class="img22" src="./image22.jpg">
 			</div>
 
 		</div>
 	</div>
 </div>
 
+<!-- WORKS -->
+<div id="works" class="section-wrap section-works">
+	<div class="section">
+		<div class="works-content section-content">
+			<h1>My Work</h1>
+
+			<div class="works-list clearfix">
+				<div class="works-item first fade fade1">
+					<img src="put image here" width="300" height="180">
+				</div>
+
+				<div class="works-item fade fade2">
+					<img src="put image here" width="300" height="180">
+				</div>
+
+				<div class="works-item fade fade3">
+					<img src="put image here" width="300" height="180">
+				</div>
+
+				<div class="works-item fade fade4">
+					<img src="put image here" width="300" height="180">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script>
-	// activate animation when about section is visible
-	const about = document.querySelector(".about");
+	// FIX: animation only when section is visible
+	const about = document.querySelector(".section-about");
 
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
