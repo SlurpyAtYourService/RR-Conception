@@ -36,7 +36,7 @@
 		}
 
 		/* ===================== */
-		/* ABOUT SECTION LAYOUT FIX */
+		/* ABOUT LAYOUT */
 		/* ===================== */
 
 		.about-content {
@@ -59,10 +59,6 @@
 			line-height: 1.7;
 		}
 
-		/* ===================== */
-		/* IMAGE FIX */
-		/* ===================== */
-
 		.right {
 			width: 50%;
 			position: relative;
@@ -71,6 +67,10 @@
 			justify-content: center;
 			min-height: 800px;
 		}
+
+		/* ===================== */
+		/* IMAGE (USES SAME FADE SYSTEM AS TEXT) */
+		/* ===================== */
 
 		.img22 {
 			width: 650px;
@@ -82,14 +82,12 @@
 			left: 50%;
 
 			opacity: 0;
+			transform: translate(-50%, -40px);
 
-			transform: translate(calc(-50% + 120px), -50%);
-			animation: none !important;
-
-			transition: transform 1s ease, opacity 1s ease;
+			transition: all 0.8s ease;
 		}
 
-		#about.active .img22 {
+		.fade.fade-in.img22 {
 			transform: translate(-50%, -50%);
 			opacity: 1;
 		}
@@ -143,7 +141,7 @@
 			</div>
 
 			<div class="right">
-				<img class="img22" src="./image22.jpg" alt="About image">
+				<img class="img22 fade fade4" src="./image22.jpg" alt="About image">
 			</div>
 
 		</div>
@@ -204,204 +202,6 @@
 
 <script src="./js/jquery-1.9.1.min.js"></script>
 <script src="./js/global.js"></script>
-
-<script>
-	const about = document.querySelector("#about");
-
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				about.classList.add("active");
-			}
-		});
-	}, { threshold: 0.4 });
-
-	observer.observe(about);
-</script>
-
-</body>
-</html>
-		/* ===================== */
-		/* ABOUT TEXT FIX */
-		/* ===================== */
-
-		.left {
-			width: 50%;
-			padding-right: 50px;
-			transform: translateX(-10px);
-		}
-
-		.left h1 {
-			font-size: 64px;
-		}
-
-		.left p {
-			font-size: 20px;
-			line-height: 1.7;
-		}
-
-		/* ===================== */
-		/* RIGHT IMAGE FIX */
-		/* ===================== */
-
-		.right {
-			width: 50%;
-			position: relative;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			min-height: 800px;
-		}
-
-		.img22 {
-			width: 650px;
-			height: auto;
-			object-fit: contain;
-
-			position: absolute;
-			top: 50%;
-			left: 50%;
-
-			/* start off to the right */
-			transform: translate(120px, -50%);
-			opacity: 0;
-
-			/* IMPORTANT: prevents global fade animation conflicts */
-			animation: none !important;
-
-			transition: transform 1s ease, opacity 1s ease;
-		}
-
-		/* ONLY WHEN SECTION IS ACTIVE */
-		#about.active .img22 {
-			transform: translate(-50%, -50%);
-			opacity: 1;
-		}
-	</style>
-</head>
-
-<body class="loading-process">
-
-<div class="loading">
-	<div class="loading-circle"></div>
-	<div class="loading-info">loading..</div>
-</div>
-
-<div class="section-header">
-	<div class="section">
-		<nav class="nav" role="navigation">
-			<ul></ul>
-		</nav>
-	</div>
-	<div class="nav-bg"></div>
-</div>
-
-<div class="home-bg">
-    <video autoplay muted loop playsinline
-        style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover;">
-        <source src="background.mp4" type="video/mp4">
-    </video>
-</div>
-
-<div class="section-wrap section-fristpage">
-	<div class="section">
-		<a href="#" class="scroll-tip fade fade4">Scroll down</a>
-	</div>
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="section-wrap section-about">
-	<div class="section">
-		<div class="about-content clearfix section-content">
-
-			<div class="left">
-				<h1 class="fade fade1">A Propos De Nous</h1>
-
-				<p class="fade fade2">
-					R&R Conception est une entreprise spécialisée dans la création de solutions sur mesure. Nous allions design, innovation et qualité pour répondre aux besoins de nos clients
-				</p>
-
-				<p class="fade fade3">
-					Concepteur de bâtiments expérimenté et autonome avec une expérience avérée dans la gestion de projets privés, la conception et la supervision des relations avec les clients
-				</p>
-			</div>
-
-			<div class="right">
-				<img class="img22" src="./image22.jpg" alt="About image">
-			</div>
-
-		</div>
-	</div>
-</div>
-
-<!-- WORKS -->
-<div id="works" class="section-wrap section-works">
-	<div class="section">
-		<div class="works-content section-content">
-			<h1>My Work</h1>
-
-			<div class="works-list clearfix">
-				<div class="works-item first fade fade1">
-					<img src="put image here" width="300" height="180">
-				</div>
-
-				<div class="works-item fade fade2">
-					<img src="put image here" width="300" height="180">
-				</div>
-
-				<div class="works-item fade fade3">
-					<img src="put image here" width="300" height="180">
-				</div>
-
-				<div class="works-item fade fade4">
-					<img src="put image here" width="300" height="180">
-				</div>
-			</div>
-
-			<a class="more-link" href="https://instagram.com/rt_graphic">more..</a>
-		</div>
-	</div>
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="section-wrap section-contact">
-	<div class="section">
-		<div class="contact-content clearfix section-content">
-			<h1>Contact Me</h1>
-
-			<div class="left">
-				<div class="contact-ways fade fade1">
-					<h2>Socials</h2>
-					<ul>
-						<li>email: ramban77@yahoo.com</li>
-						<li>téléphone: 07 82 77 46 64</li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-
-<div class="overlay"></div>
-<div class="state-indicator"></div>
-
-<script src="./js/jquery-1.9.1.min.js"></script>
-<script src="./js/global.js"></script>
-
-<script>
-	const about = document.querySelector("#about");
-
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				about.classList.add("active");
-			}
-		});
-	}, { threshold: 0.4 });
-
-	observer.observe(about);
-</script>
 
 </body>
 </html>
