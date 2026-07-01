@@ -47,13 +47,11 @@
 		.left {
 			width: 50%;
 			padding-right: 60px;
-			transform: translateY(-15px);
+			transform: translateY(-10px);
 		}
 
-		/* 🔥 BIGGER TEXT */
 		.left h1 {
 			font-size: 64px;
-			margin-bottom: 20px;
 		}
 
 		.left p {
@@ -67,40 +65,38 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			min-height: 700px;
+			min-height: 750px;
 		}
 
-		/* 🔥 FIX IMAGE 1 (NO DROP DOWN BUG) */
+		/* ===================== */
+		/* IMAGE FIX (ONLY ONE ACTIVE IMAGE) */
+		/* ===================== */
+
 		.my-photo {
-			width: 520px;
+			width: 560px;
 			height: auto;
 			object-fit: contain;
 
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%, -50%);
-			z-index: 2;
-		}
 
-		/* IMAGE 22 (slides from right, same size style) */
-		.img22 {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 520px;
-			height: auto;
-			object-fit: contain;
-
+			/* start OFF SCREEN RIGHT */
 			transform: translate(120px, -50%);
 			opacity: 0;
+
 			transition: all 1s ease;
-			pointer-events: none;
 		}
 
-		#about.active .img22 {
-			opacity: 1;
+		/* ONLY WHEN ABOUT IS ACTIVE */
+		#about.active .my-photo {
 			transform: translate(-50%, -50%);
+			opacity: 1;
+		}
+
+		/* prevent accidental second image behavior */
+		.img22 {
+			display: none !important;
 		}
 	</style>
 </head>
@@ -152,8 +148,8 @@
 			</div>
 
 			<div class="right">
+				<!-- ONLY IMAGE USED -->
 				<img class="my-photo fade fade4" src="./image1.jpg" alt="My photo">
-				<img class="img22" src="./image22.jpg" alt="About image">
 			</div>
 
 		</div>
@@ -194,6 +190,7 @@
 	<div class="section">
 		<div class="contact-content clearfix section-content">
 			<h1>Contact Me</h1>
+
 			<div class="left">
 				<div class="contact-ways fade fade1">
 					<h2>Socials</h2>
@@ -203,6 +200,7 @@
 					</ul>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </div>
