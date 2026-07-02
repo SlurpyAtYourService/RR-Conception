@@ -9,13 +9,27 @@
 	<link rel="shortcut icon" href="favicon.png"/>
 
 	<style>
+		/* BLURRED GLOBAL VIDEO BACKGROUND */
+		.home-bg video {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -2;
+			filter: blur(14px) brightness(0.7);
+			transform: scale(1.1);
+		}
+
+		/* dark overlay vignette */
 		body::before {
 			content: "";
 			position: fixed;
 			inset: 0;
 			pointer-events: none;
-			background: radial-gradient(circle, rgba(0,0,0,0) 70%, rgba(0,0,0,0.35) 100%);
-			z-index: 999;
+			background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.5) 100%);
+			z-index: -1;
 		}
 
 		body,
@@ -33,6 +47,12 @@
 		p {
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight: 400;
+			color: white;
+		}
+
+		/* IMPORTANT: make all sections transparent */
+		.section-wrap {
+			background: transparent !important;
 		}
 
 		.section-about .about-content {
@@ -43,11 +63,6 @@
 		.section-about .left {
 			width: 55%;
 			transform: translateX(-100px);
-		}
-
-		.section-about .left p {
-			margin-bottom: 14px;
-			line-height: 1.6;
 		}
 
 		.section-about .right {
@@ -89,9 +104,9 @@
 	<div class="nav-bg"></div>
 </div>
 
+<!-- GLOBAL VIDEO BACKGROUND -->
 <div class="home-bg">
-	<video autoplay muted loop playsinline
-		style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover;">
+	<video autoplay muted loop playsinline>
 		<source src="background.mp4" type="video/mp4">
 	</video>
 </div>
@@ -134,25 +149,25 @@
 			<div class="works-list clearfix">
 				<div class="works-item first fade fade1">
 					<img src="./work1.jpg" width="300" height="180">
-					<div class="work-info" style="transform: translateY(-20px);">
+					<div class="work-info">
 						<h2>Cayan Group</h2>
-						<h5>L'idée était d'une grande simplicité : concevoir un espace reflétant la personnalité de l'établissement grâce à des matériaux de haute qualité et à une approche épurée, le tout porté par un design soigné et une exécution irréprochable. Le résultat est un environnement à la fois fonctionnel pour les employés et chaleureux pour les clients.</h5>
+						<h5>Design épuré, matériaux premium, espace fonctionnel et chaleureux.</h5>
 					</div>
 				</div>
 
 				<div class="works-item fade fade2">
 					<img src="./work2.jpg" width="300" height="180">
-					<div class="work-info" style="transform: translateY(-20px);">
+					<div class="work-info">
 						<h2>KowoK Restaurant</h2>
-						<h5>Le concept de Kowok repose sur une idée simple mais ambitieuse : créer un restaurant où authenticité et modernité se rencontrent. À travers une cuisine maîtrisée, des ingrédients soigneusement sélectionnés et une atmosphère immersive, l’espace a été pensé pour offrir une expérience à la fois conviviale pour les clients et efficace pour l’équipe.</h5>
+						<h5>Fusion entre authenticité et modernité dans une expérience immersive.</h5>
 					</div>
 				</div>
 
 				<div class="works-item fade fade3">
 					<img src="./work3.jpg" width="300" height="180">
-					<div class="work-info" style="transform: translateY(-20px);">
+					<div class="work-info">
 						<h2>K&A Residence</h2>
-						<h5>La résidence a été imaginée comme un lieu de calme et d’équilibre, où l’architecture met en valeur la lumière, les volumes et la simplicité des matériaux. L’objectif était de créer un environnement confortable et durable, pensé pour le bien-être au quotidien. Le résultat est un espace intime, fonctionnel et élégant, où chaque élément trouve naturellement sa place.</h5>
+						<h5>Un espace calme, lumineux et équilibré pensé pour le bien-être.</h5>
 					</div>
 				</div> 
 			</div>
@@ -184,11 +199,6 @@
 window.addEventListener("load", function () {
 	document.body.classList.remove("loading-process");
 	document.body.classList.add("finish-loading");
-
-	setTimeout(() => {
-		document.body.classList.remove("loading-process");
-		document.body.classList.add("finish-loading");
-	}, 1500);
 });
 </script>
 
