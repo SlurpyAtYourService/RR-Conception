@@ -67,3 +67,15 @@ body {
     margin: 0 auto;
     box-sizing: border-box;
 }
+.works-list{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.works-item{
+    float: none !important;
+    transform: none !important;
+}
