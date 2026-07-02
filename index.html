@@ -29,6 +29,7 @@
 			z-index: 999;
 		}
 
+		/* GLOBAL TEXT STYLE */
 		body,
 		button,
 		input,
@@ -60,6 +61,11 @@
 		.section-about .left {
 			width: 55%;
 			transform: translateX(-100px);
+		}
+
+		.section-about .left p {
+			margin-bottom: 14px;
+			line-height: 1.6;
 		}
 
 		.section-about .right {
@@ -100,6 +106,7 @@
 			background: transparent !important;
 		}
 
+		/* ===== SCROLLBAR FIX (OLD TEMPLATE FEEL) ===== */
 		html, body {
 			overflow-x: hidden;
 		}
@@ -231,15 +238,13 @@ window.addEventListener("load", function () {
 
 const video = document.querySelector(".home-bg video");
 
-function updateBackgroundEffects() {
+window.addEventListener("scroll", () => {
 	const scroll = window.scrollY;
 	const blur = Math.min(scroll / 40, 18);
-	const brightness = Math.max(0.45, 0.85 - scroll / 1000);
-	video.style.filter = `blur(${blur}px) brightness(${brightness})`;
-}
 
-window.addEventListener("scroll", updateBackgroundEffects);
-updateBackgroundEffects();
+	// DARKER BACKGROUND (only change)
+	video.style.filter = `blur(${blur}px) brightness(${Math.max(0.25, 0.85 - scroll / 700)})`;
+});
 </script>
 
 </body>
