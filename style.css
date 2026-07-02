@@ -67,3 +67,13 @@ body {
     margin: 0 auto;
     box-sizing: border-box;
 }
+.works-list {
+    text-align: center;
+}
+
+.works-item {
+    display: inline-block;
+    float: none;
+    margin: 15px;
+    vertical-align: top;
+}
