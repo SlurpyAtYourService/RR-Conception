@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="./style.css" type="text/css" media="all" />
 	<link rel="shortcut icon" href="favicon.png"/>
 
-	<!-- FONT PLACEHOLDERS (replace with real files if you have them) -->
 	<style>
 		@font-face {
 			font-family: "GoBold";
@@ -29,7 +28,6 @@
 			z-index: 999;
 		}
 
-		/* GLOBAL TEXT STYLE */
 		body,
 		button,
 		input,
@@ -108,18 +106,10 @@
 
 		html, body {
 			overflow-x: hidden;
+			scroll-behavior: smooth;
 		}
 
-		::-webkit-scrollbar {
-			width: 0px;
-			height: 0px;
-		}
-
-		html {
-			scrollbar-width: none;
-		}
-
-		/* ================= SCROLL BUTTON ================= */
+		/* SCROLL BUTTON */
 		.scroll-btn {
 			position: fixed;
 			bottom: 30px;
@@ -149,12 +139,12 @@
 			border-right: 2px solid #c2a400;
 			border-bottom: 2px solid #c2a400;
 			transform: rotate(45deg);
-			animation: floatArrow 1.5s infinite ease-in-out;
+			animation: arrowFloat 1.5s infinite ease-in-out;
 		}
 
-		@keyframes floatArrow {
+		@keyframes arrowFloat {
 			0%   { transform: rotate(45deg) translateY(0); opacity: 0.6; }
-			50%  { transform: rotate(45deg) translateY(6px); opacity: 1; }
+			50%  { transform: rotate(45deg) translateY(5px); opacity: 1; }
 			100% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
 		}
 	</style>
@@ -286,15 +276,15 @@ window.addEventListener("scroll", () => {
 	video.style.filter = `blur(${blur}px) brightness(0.85)`;
 });
 
-/* scroll button */
 function scrollToNext() {
 	const sections = document.querySelectorAll(".section-wrap");
 	const current = window.scrollY;
 
 	for (let i = 0; i < sections.length; i++) {
-		if (sections[i].offsetTop > current + 10) {
+		const top = sections[i].getBoundingClientRect().top + window.scrollY;
+		if (top > current + 10) {
 			window.scrollTo({
-				top: sections[i].offsetTop,
+				top,
 				behavior: "smooth"
 			});
 			break;
