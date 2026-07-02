@@ -48,43 +48,16 @@
 		h1 {
 			font-family: "GoBold", sans-serif;
 			color: #c2a400;
-			font-weight: 400;
 		}
 
-		.section-about .about-content {
-			display: flex;
-			align-items: center;
+		html, body {
+			margin: 0;
+			padding: 0;
+			overflow-x: hidden;
 		}
 
-		.section-about .left {
-			width: 55%;
-			transform: translateX(-100px);
-		}
-
-		.section-about .left p {
-			margin-bottom: 14px;
-			line-height: 1.6;
-		}
-
-		.section-about .right {
-			width: 45%;
-			display: flex;
-			justify-content: flex-end;
-			transform: translateX(80px);
-		}
-
-		.section-about .img22 {
-			width: 600px;
-			max-width: none;
-			height: auto;
-			opacity: 0;
-			transform: translateX(60px);
-			transition: all 0.8s ease;
-		}
-
-		.section-about .fade.fade-in.img22 {
-			opacity: 1;
-			transform: translateX(0);
+		.section-wrap {
+			background: transparent !important;
 		}
 
 		.home-bg video {
@@ -100,19 +73,33 @@
 			transition: filter 0.1s linear;
 		}
 
-		.section-wrap {
-			background: transparent !important;
+		/* ABOUT LAYOUT */
+		.section-about .about-content {
+			display: flex;
+			align-items: center;
 		}
 
-		html, body {
-			overflow-x: hidden;
-			scroll-behavior: smooth;
+		.section-about .left {
+			width: 55%;
+			transform: translateX(-100px);
+		}
+
+		.section-about .right {
+			width: 45%;
+			display: flex;
+			justify-content: flex-end;
+			transform: translateX(80px);
+		}
+
+		.section-about .img22 {
+			width: 600px;
+			max-width: none;
 		}
 
 		/* SCROLL BUTTON */
 		.scroll-btn {
 			position: fixed;
-			bottom: 30px;
+			bottom: 35px;
 			left: 50%;
 			transform: translateX(-50%);
 			width: 60px;
@@ -125,12 +112,12 @@
 			justify-content: center;
 			cursor: pointer;
 			z-index: 9999;
-			transition: all 0.3s ease;
+			transition: 0.3s ease;
 		}
 
 		.scroll-btn:hover {
 			transform: translateX(-50%) scale(1.1);
-			background: rgba(194, 164, 0, 0.15);
+			background: rgba(194,164,0,0.15);
 		}
 
 		.arrow {
@@ -139,12 +126,12 @@
 			border-right: 2px solid #c2a400;
 			border-bottom: 2px solid #c2a400;
 			transform: rotate(45deg);
-			animation: arrowFloat 1.5s infinite ease-in-out;
+			animation: floatArrow 1.5s infinite ease-in-out;
 		}
 
-		@keyframes arrowFloat {
-			0%   { transform: rotate(45deg) translateY(0); opacity: 0.6; }
-			50%  { transform: rotate(45deg) translateY(5px); opacity: 1; }
+		@keyframes floatArrow {
+			0% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
+			50% { transform: rotate(45deg) translateY(6px); opacity: 1; }
 			100% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
 		}
 	</style>
@@ -155,15 +142,6 @@
 <div class="loading">
 	<div class="loading-circle"></div>
 	<div class="loading-info">loading..</div>
-</div>
-
-<div class="section-header">
-	<div class="section">
-		<nav class="nav" role="navigation">
-			<ul></ul>
-		</nav>
-	</div>
-	<div class="nav-bg"></div>
 </div>
 
 <div class="home-bg">
@@ -180,22 +158,22 @@
 
 <div id="about" class="section-wrap section-about">
 	<div class="section">
-		<div class="about-content clearfix section-content">
+		<div class="about-content">
 
 			<div class="left">
-				<h1 class="fade fade1">A Propos De Nous</h1>
+				<h1>A Propos De Nous</h1>
 
-				<p class="fade fade2">
-					R&R Conception est une entreprise spécialisée dans la création de solutions sur mesure. Nous allions design, innovation et qualité pour répondre aux besoins de nos clients
+				<p>
+					R&R Conception est une entreprise spécialisée dans la création de solutions sur mesure.
 				</p>
 
-				<p class="fade fade3">
-					Concepteur de bâtiments expérimenté et autonome avec une expérience avérée dans la gestion de projets privés, la conception et la supervision des relations avec les clients
+				<p>
+					Concepteur de bâtiments expérimenté et autonome avec une expérience avérée dans la gestion de projets.
 				</p>
 			</div>
 
 			<div class="right">
-				<img class="img22 fade fade4" src="./image22.jpg" alt="About image">
+				<img class="img22" src="./image22.jpg">
 			</div>
 
 		</div>
@@ -204,51 +182,37 @@
 
 <div id="works" class="section-wrap section-works">
 	<div class="section">
-		<div class="works-content section-content">
-			<h1>Nos Projets</h1>
+		<h1>Nos Projets</h1>
 
-			<div class="works-list clearfix">
+		<div class="works-list">
 
-				<div class="works-item first fade fade1">
-					<img src="./work1.jpg" width="300" height="180">
-					<div class="work-info" style="transform: translateY(-20px);">
-						<h2>Cayan Group</h2>
-						<h5>L'idée était d'une grande simplicité : concevoir un espace reflétant la personnalité de l'établissement grâce à des matériaux de haute qualité et à une approche épurée, le tout porté par un design soigné et une exécution irréprochable. Le résultat est un environnement à la fois fonctionnel pour les employés et chaleureux pour les clients.</h5>
-					</div>
-				</div>
-
-				<div class="works-item fade fade2">
-					<img src="./work2.jpg" width="300" height="180">
-					<div class="work-info" style="transform: translateY(-20px);">
-						<h2>KowoK Restaurant</h2>
-						<h5>Le concept de Kowok repose sur une idée simple mais ambitieuse : créer un restaurant où authenticité et modernité se rencontrent. À travers une cuisine maîtrisée, des ingrédients soigneusement sélectionnés et une atmosphère immersive, l’espace a été pensé pour offrir une expérience à la fois conviviale pour les clients et efficace pour l’équipe.</h5>
-					</div>
-				</div>
-
-				<div class="works-item fade fade3">
-					<img src="./work3.jpg" width="300" height="180">
-					<div class="work-info" style="transform: translateY(-20px);">
-						<h2>K&A Residence</h2>
-						<h5>La résidence a été imaginée comme un lieu de calme et d’équilibre, où l’architecture met en valeur la lumière, les volumes et la simplicité des matériaux. L’objectif était de créer un environnement confortable et durable, pensé pour le bien-être au quotidien. Le résultat est un espace intime, fonctionnel et élégant, où chaque élément trouve naturellement sa place.</h5>
-					</div>
-				</div> 
-
+			<div class="works-item">
+				<img src="./work1.jpg">
+				<h2>Cayan Group</h2>
+				<h5>Design intérieur premium et moderne.</h5>
 			</div>
 
-			<a class="more-link" href="https://ramban.my.canva.site/">more..</a>
+			<div class="works-item">
+				<img src="./work2.jpg">
+				<h2>KowoK Restaurant</h2>
+				<h5>Expérience immersive restaurant.</h5>
+			</div>
+
+			<div class="works-item">
+				<img src="./work3.jpg">
+				<h2>K&A Residence</h2>
+				<h5>Architecture minimaliste et lumineuse.</h5>
+			</div>
+
 		</div>
 	</div>
 </div>
 
 <div id="contact" class="section-wrap section-contact">
 	<div class="section">
-		<div class="contact-content clearfix section-content">
-			<h1>Contactez-Nous</h1>
-
-			<li>email: ramban77@yahoo.com</li>
-			<li>téléphone: 07 82 77 46 64</li>
-
-		</div>
+		<h1>Contactez-Nous</h1>
+		<li>email: ramban77@yahoo.com</li>
+		<li>téléphone: 07 82 77 46 64</li>
 	</div>
 </div>
 
@@ -257,21 +221,9 @@
 	<div class="arrow"></div>
 </div>
 
-<div class="overlay"></div>
-<div class="state-indicator"></div>
-
-<script src="./js/jquery-1.9.1.min.js"></script>
-<script src="./js/global.js"></script>
-
 <script>
-window.addEventListener("load", function () {
-	document.body.classList.remove("loading-process");
-	document.body.classList.add("finish-loading");
-});
-
-const video = document.querySelector(".home-bg video");
-
 window.addEventListener("scroll", () => {
+	const video = document.querySelector(".home-bg video");
 	const blur = Math.min(window.scrollY / 40, 18);
 	video.style.filter = `blur(${blur}px) brightness(0.85)`;
 });
@@ -283,11 +235,8 @@ function scrollToNext() {
 	for (let i = 0; i < sections.length; i++) {
 		const top = sections[i].getBoundingClientRect().top + window.scrollY;
 		if (top > current + 10) {
-			window.scrollTo({
-				top,
-				behavior: "smooth"
-			});
-			break;
+			window.scrollTo({ top, behavior: "smooth" });
+			return;
 		}
 	}
 }
