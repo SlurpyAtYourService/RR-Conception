@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="./style.css" type="text/css" media="all" />
 	<link rel="shortcut icon" href="favicon.png"/>
 
-	<!-- FONT PLACEHOLDERS (replace with real files if you have them) -->
 	<style>
 		@font-face {
 			font-family: "GoBold";
@@ -29,12 +28,195 @@
 			z-index: 999;
 		}
 
-		/* GLOBAL TEXT STYLE */
 		body,
 		button,
 		input,
 		textarea,
 		select,
+		a,
+		p,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: "Coolvetica", sans-serif;
+			font-weight: 400;
+			color: #c2a400;
+		}
+
+		h1 {
+			font-family: "GoBold", sans-serif;
+			color: #c2a400;
+			font-weight: 400;
+		}
+
+		.section-about .about-content {
+			display: flex;
+			align-items: center;
+		}
+
+		.section-about .left {
+			width: 55%;
+			transform: translateX(-100px);
+		}
+
+		.section-about .right {
+			width: 45%;
+			display: flex;
+			justify-content: flex-end;
+			transform: translateX(80px);
+		}
+
+		.section-about .img22 {
+			width: 600px;
+			opacity: 0;
+			transform: translateX(60px);
+			transition: all 0.8s ease;
+		}
+
+		.home-bg video {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -2;
+			filter: brightness(0.85);
+			transform: scale(1.1);
+		}
+
+		html, body {
+			overflow-x: hidden;
+		}
+
+		::-webkit-scrollbar {
+			width: 0px;
+		}
+
+		/* ===== SCROLL BUTTON ===== */
+		.scroll-btn {
+			position: fixed;
+			bottom: 25px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 55px;
+			height: 55px;
+			border: 1px solid #c2a400;
+			border-radius: 50%;
+			background: rgba(0,0,0,0.3);
+			backdrop-filter: blur(6px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			z-index: 1000;
+			transition: 0.3s ease;
+			animation: float 1.8s infinite ease-in-out;
+		}
+
+		.scroll-btn:hover {
+			transform: translateX(-50%) scale(1.1);
+		}
+
+		.scroll-btn svg {
+			width: 22px;
+			height: 22px;
+			fill: #c2a400;
+		}
+
+		@keyframes float {
+			0%,100% { transform: translateX(-50%) translateY(0); }
+			50% { transform: translateX(-50%) translateY(-6px); }
+		}
+
+		.scroll-hide {
+			opacity: 0;
+			pointer-events: none;
+		}
+	</style>
+</head>
+
+<body class="loading-process">
+
+<!-- SCROLL BUTTON -->
+<div class="scroll-btn" id="scrollBtn">
+	<svg viewBox="0 0 24 24">
+		<path d="M12 16l-6-6h12z"></path>
+	</svg>
+</div>
+
+<div class="home-bg">
+	<video autoplay muted loop playsinline>
+		<source src="background.mp4" type="video/mp4">
+	</video>
+</div>
+
+<div id="about" class="section-wrap section-about">
+	<div class="section">
+		<div class="about-content">
+			<div class="left">
+				<h1>A Propos De Nous</h1>
+				<p>R&R Conception est une entreprise spécialisée dans la création de solutions sur mesure.</p>
+				<p>Concepteur de bâtiments expérimenté et autonome.</p>
+			</div>
+
+			<div class="right">
+				<img class="img22" src="./image22.jpg">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="works" class="section-wrap section-works">
+	<div class="section">
+		<h1>Nos Projets</h1>
+	</div>
+</div>
+
+<div id="contact" class="section-wrap section-contact">
+	<div class="section">
+		<h1>Contact</h1>
+	</div>
+</div>
+
+<script>
+const btn = document.getElementById("scrollBtn");
+
+let autoScroll = false;
+let scrollInterval;
+
+btn.addEventListener("click", () => {
+	autoScroll = !autoScroll;
+
+	if (autoScroll) {
+		scrollInterval = setInterval(() => {
+			window.scrollBy({
+				top: 6,
+				behavior: "smooth"
+			});
+		}, 10);
+	} else {
+		clearInterval(scrollInterval);
+	}
+});
+
+// hide button in last section
+window.addEventListener("scroll", () => {
+	const contact = document.getElementById("contact");
+	const rect = contact.getBoundingClientRect();
+
+	if (rect.top < window.innerHeight - 100) {
+		btn.classList.add("scroll-hide");
+	} else {
+		btn.classList.remove("scroll-hide");
+	}
+});
+</script>
+
+</body>
+</html>		select,
 		a,
 		p,
 		h2,
