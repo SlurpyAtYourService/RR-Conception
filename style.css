@@ -53,27 +53,3 @@ body {
     left: 0 !important;
 }
 
-.section-about,
-.section-works,
-.section-contact,
-.section-fristpage {
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-}
-
-.section {
-    width: min(1200px, calc(100vw - 80px));
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-.works-list {
-    text-align: center;
-}
-
-.works-item {
-    display: inline-block;
-    float: none;
-    margin: 15px;
-    vertical-align: top;
-}
