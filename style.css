@@ -84,3 +84,7 @@ body {
     overflow: hidden;
     display: block;
 }
+.works-item{
+    border-radius: 12px;
+    overflow: hidden;
+}
