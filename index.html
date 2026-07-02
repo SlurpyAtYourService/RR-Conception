@@ -35,10 +35,6 @@
 			font-weight: 400;
 		}
 
-		/* ===================== */
-		/* ABOUT SECTION (UNCHANGED WORKING VERSION) */
-		/* ===================== */
-
 		.section-about .about-content {
 			display: flex;
 			align-items: center;
@@ -65,7 +61,6 @@
 			width: 600px;
 			max-width: none;
 			height: auto;
-
 			opacity: 0;
 			transform: translateX(60px);
 			transition: all 0.8s ease;
@@ -80,13 +75,11 @@
 
 <body class="loading-process">
 
-<!-- LOADING SCREEN -->
 <div class="loading">
 	<div class="loading-circle"></div>
 	<div class="loading-info">loading..</div>
 </div>
 
-<!-- NAV -->
 <div class="section-header">
 	<div class="section">
 		<nav class="nav" role="navigation">
@@ -96,7 +89,6 @@
 	<div class="nav-bg"></div>
 </div>
 
-<!-- BACKGROUND -->
 <div class="home-bg">
 	<video autoplay muted loop playsinline
 		style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover;">
@@ -104,14 +96,12 @@
 	</video>
 </div>
 
-<!-- FIRST SECTION -->
 <div class="section-wrap section-fristpage">
 	<div class="section">
 		<a href="#" class="scroll-tip fade fade4">Scroll down</a>
 	</div>
 </div>
 
-<!-- ABOUT -->
 <div id="about" class="section-wrap section-about">
 	<div class="section">
 		<div class="about-content clearfix section-content">
@@ -136,7 +126,6 @@
 	</div>
 </div>
 
-<!-- WORKS -->
 <div id="works" class="section-wrap section-works">
 	<div class="section">
 		<div class="works-content section-content">
@@ -145,39 +134,38 @@
 			<div class="works-list clearfix">
 				<div class="works-item first fade fade1">
 					<img src="./work1.jpg" width="300" height="180">
-					<div class="work-info"><h2>design</h2></div>
+					<div class="work-info" style="transform: translateY(-20px);">
+						<h2>design</h2>
+					</div>
 				</div>
 
 				<div class="works-item fade fade2">
 					<img src="./work2.jpg" width="300" height="180">
-					<div class="work-info"><h2>design</h2></div>
+					<div class="work-info" style="transform: translateY(-20px);">
+						<h2>design</h2>
+					</div>
 				</div>
 
 				<div class="works-item fade fade3">
 					<img src="./work3.jpg" width="300" height="180">
-					<div class="work-info"><h2>design</h2></div>
+					<div class="work-info" style="transform: translateY(-20px);">
+						<h2>design</h2>
+					</div>
 				</div> 
-				
 			</div>
-			
+
 			<a class="more-link" href="https://ramban.my.canva.site/">more..</a>
 		</div>
 	</div>
 </div>
 
-<!-- CONTACT -->
 <div id="contact" class="section-wrap section-contact">
 	<div class="section">
 		<div class="contact-content clearfix section-content">
 			<h1>Contactez-Nous</h1>
 
-				
-				
-					<li>email: ramban77@yahoo.com</li>
-					<li>téléphone: 07 82 77 46 64</li>
-					
-				
-			
+			<li>email: ramban77@yahoo.com</li>
+			<li>téléphone: 07 82 77 46 64</li>
 
 		</div>
 	</div>
@@ -189,13 +177,11 @@
 <script src="./js/jquery-1.9.1.min.js"></script>
 <script src="./js/global.js"></script>
 
-<!-- ✅ FIX: RESTORE CONTENT VISIBILITY -->
 <script>
 window.addEventListener("load", function () {
 	document.body.classList.remove("loading-process");
 	document.body.classList.add("finish-loading");
 
-	// safety fallback
 	setTimeout(() => {
 		document.body.classList.remove("loading-process");
 		document.body.classList.add("finish-loading");
