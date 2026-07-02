@@ -8,7 +8,18 @@
 	<link rel="stylesheet" href="./style.css" type="text/css" media="all" />
 	<link rel="shortcut icon" href="favicon.png"/>
 
+	<!-- FONT PLACEHOLDERS (replace with real files if you have them) -->
 	<style>
+		@font-face {
+			font-family: "GoBold";
+			src: url("./GoBold.ttf");
+		}
+
+		@font-face {
+			font-family: "Coolvetica";
+			src: url("./Coolvetica.ttf");
+		}
+
 		body::before {
 			content: "";
 			position: fixed;
@@ -18,20 +29,27 @@
 			z-index: 999;
 		}
 
+		/* GLOBAL TEXT STYLE */
 		body,
 		button,
 		input,
 		textarea,
 		select,
 		a,
-		h1,
+		p,
 		h2,
 		h3,
 		h4,
 		h5,
-		h6,
-		p {
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		h6 {
+			font-family: "Coolvetica", sans-serif;
+			font-weight: 400;
+			color: gold;
+		}
+
+		h1 {
+			font-family: "GoBold", sans-serif;
+			color: gold;
 			font-weight: 400;
 		}
 
@@ -71,7 +89,6 @@
 			transform: translateX(0);
 		}
 
-		/* VIDEO */
 		.home-bg video {
 			position: fixed;
 			top: 0;
@@ -149,6 +166,7 @@
 			<h1>Nos Projets</h1>
 
 			<div class="works-list clearfix">
+
 				<div class="works-item first fade fade1">
 					<img src="./work1.jpg" width="300" height="180">
 					<div class="work-info" style="transform: translateY(-20px);">
@@ -172,6 +190,7 @@
 						<h5>La résidence a été imaginée comme un lieu de calme et d’équilibre, où l’architecture met en valeur la lumière, les volumes et la simplicité des matériaux. L’objectif était de créer un environnement confortable et durable, pensé pour le bien-être au quotidien. Le résultat est un espace intime, fonctionnel et élégant, où chaque élément trouve naturellement sa place.</h5>
 					</div>
 				</div> 
+
 			</div>
 
 			<a class="more-link" href="https://ramban.my.canva.site/">more..</a>
@@ -203,7 +222,6 @@ window.addEventListener("load", function () {
 	document.body.classList.add("finish-loading");
 });
 
-/* BLUR ON SCROLL */
 const video = document.querySelector(".home-bg video");
 
 window.addEventListener("scroll", () => {
