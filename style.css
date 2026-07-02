@@ -79,3 +79,8 @@ body {
     float: none !important;
     transform: none !important;
 }
+.works-item img{
+    border-radius: 12px;
+    overflow: hidden;
+    display: block;
+}
