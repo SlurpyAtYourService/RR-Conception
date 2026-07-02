@@ -94,4 +94,20 @@ body {
     align-items: center;
 }
 
-
+body,
+button,
+input,
+textarea,
+select,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span {
+	color: #c2a400 !important;
+}
