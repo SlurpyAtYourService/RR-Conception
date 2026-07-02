@@ -106,7 +106,6 @@
 			background: transparent !important;
 		}
 
-		/* ===== SCROLLBAR FIX (OLD TEMPLATE FEEL) ===== */
 		html, body {
 			overflow-x: hidden;
 		}
@@ -118,6 +117,45 @@
 
 		html {
 			scrollbar-width: none;
+		}
+
+		/* ================= SCROLL BUTTON ================= */
+		.scroll-btn {
+			position: fixed;
+			bottom: 30px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			border: 1px solid #c2a400;
+			background: rgba(0,0,0,0.4);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			z-index: 9999;
+			transition: all 0.3s ease;
+		}
+
+		.scroll-btn:hover {
+			transform: translateX(-50%) scale(1.1);
+			background: rgba(194, 164, 0, 0.15);
+		}
+
+		.arrow {
+			width: 10px;
+			height: 10px;
+			border-right: 2px solid #c2a400;
+			border-bottom: 2px solid #c2a400;
+			transform: rotate(45deg);
+			animation: floatArrow 1.5s infinite ease-in-out;
+		}
+
+		@keyframes floatArrow {
+			0%   { transform: rotate(45deg) translateY(0); opacity: 0.6; }
+			50%  { transform: rotate(45deg) translateY(6px); opacity: 1; }
+			100% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
 		}
 	</style>
 </head>
@@ -224,6 +262,11 @@
 	</div>
 </div>
 
+<!-- SCROLL BUTTON -->
+<div class="scroll-btn" onclick="scrollToNext()">
+	<div class="arrow"></div>
+</div>
+
 <div class="overlay"></div>
 <div class="state-indicator"></div>
 
@@ -242,6 +285,22 @@ window.addEventListener("scroll", () => {
 	const blur = Math.min(window.scrollY / 40, 18);
 	video.style.filter = `blur(${blur}px) brightness(0.85)`;
 });
+
+/* scroll button */
+function scrollToNext() {
+	const sections = document.querySelectorAll(".section-wrap");
+	const current = window.scrollY;
+
+	for (let i = 0; i < sections.length; i++) {
+		if (sections[i].offsetTop > current + 10) {
+			window.scrollTo({
+				top: sections[i].offsetTop,
+				behavior: "smooth"
+			});
+			break;
+		}
+	}
+}
 </script>
 
 </body>
