@@ -75,6 +75,33 @@
 			opacity: 1;
 			transform: translateX(0);
 		}
+
+		/* FIX */
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			overflow-x: hidden;
+			background: #000;
+		}
+
+		.section-wrap {
+			position: relative;
+			width: 100%;
+			min-height: 100vh;
+			background: #000;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.section {
+			width: 100%;
+			max-width: 100%;
+			margin: 0 auto;
+			box-sizing: border-box;
+		}
 	</style>
 </head>
 
@@ -156,10 +183,9 @@
 				<div class="works-item fade fade3">
 					<img src="./work3.jpg" width="300" height="180">
 					<div class="work-info"><h2>design</h2></div>
-				</div> 
-				
+				</div>
 			</div>
-			
+
 			<a class="more-link" href="https://ramban.my.canva.site/">more..</a>
 		</div>
 	</div>
@@ -171,14 +197,8 @@
 		<div class="contact-content clearfix section-content">
 			<h1>Contactez-Nous</h1>
 
-				
-				
-					<li>email: ramban77@yahoo.com</li>
-					<li>téléphone: 07 82 77 46 64</li>
-					
-				
-			
-
+			<li>email: ramban77@yahoo.com</li>
+			<li>téléphone: 07 82 77 46 64</li>
 		</div>
 	</div>
 </div>
@@ -189,13 +209,11 @@
 <script src="./js/jquery-1.9.1.min.js"></script>
 <script src="./js/global.js"></script>
 
-<!-- ✅ FIX: RESTORE CONTENT VISIBILITY -->
 <script>
 window.addEventListener("load", function () {
 	document.body.classList.remove("loading-process");
 	document.body.classList.add("finish-loading");
 
-	// safety fallback
 	setTimeout(() => {
 		document.body.classList.remove("loading-process");
 		document.body.classList.add("finish-loading");
